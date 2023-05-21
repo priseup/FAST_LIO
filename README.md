@@ -87,11 +87,12 @@ Clone the repository and catkin_make:
     cd ~/$A_ROS_DIR$/src
     git clone https://github.com/hku-mars/FAST_LIO.git
     cd FAST_LIO
-    git submodule update --init
+    ## git submodule update --init  ---- no need
     cd ../..
-    catkin_make
+    catkin_make [-j1]
     source devel/setup.bash
 ```
+When you compile the code for the first time, you need to add "-j1" behind "catkin_make" for generating some message types. "-j1" is not needed for future compiling.
 - Remember to source the livox_ros_driver before build (follow 1.3 **livox_ros_driver**)
 - If you want to use a custom build of PCL, add the following line to ~/.bashrc
 ```export PCL_ROOT={CUSTOM_PCL_PATH}```
